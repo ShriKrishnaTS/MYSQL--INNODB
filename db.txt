@@ -1,0 +1,45 @@
+CREATE TABLE employee (
+    IDpk    INTEGER NOT NULL AUTO_INCREMENT,
+
+    ssn     CHAR(11) NOT NULL,
+
+    name    CHAR(64),
+
+    phone   CHAR(32),
+
+    dept_fk INTEGER NOT NULL,
+
+    PRIMARY KEY (IDpk)
+
+) ENGINE = InnoDB;
+
+ 
+
+CREATE TABLE department (
+
+    IDpk        INTEGER NOT NULL AUTO_INCREMENT,
+    dept_name   CHAR(64),
+
+    PRIMARY KEY (IDpk)
+
+) ENGINE = InnoDB;
+
+ 
+
+ALTER TABLE employee ADD FOREIGN KEY(dept_fk) REFERENCES department (IDpk) ON DELETE CASCADE;
+
+ 
+
+INSERT INTO department (dept_name) VALUES ('accounting');
+
+INSERT INTO department (dept_name) VALUES ('engineering');
+
+ 
+
+INSERT INTO employee (ssn, name, phone, dept_fk) VALUES ('01','Shri Krishna T S','9742372862', 1);
+
+INSERT INTO employee (ssn, name, phone, dept_fk) VALUES ('02','Shri Krishna','9481936274', 2);
+
+INSERT INTO employee (ssn, name, phone, dept_fk) VALUES ('03','Shri','9448697082', 1);
+
+INSERT INTO employee (ssn, name, phone, dept_fk) VALUES ('04','Krishna','9916206561', 2);
