@@ -23,13 +23,13 @@ public class InnoDbCount{
       stmt = connection.createStatement();
       String sql;
       sql = "select *from information_schema.plugins where 
-		plugin_name=ímysql_pluginí ;
+		plugin_name=‚Äômysql_plugin‚Äô ;
       ResultSet rs = stmt.executeQuery(sql);
 
 if(rs.size() == 0) {
 
 
-	System.out.rintln("InnoDB plug ñin is not installed\nî);
+	System.out.rintln("InnoDB plug ‚Äìin is not installed\n‚Äù);
 	
 }
 else {
@@ -51,3 +51,4 @@ while(rs.next()){
       stmt.close();
       conn.close();
 }
+
